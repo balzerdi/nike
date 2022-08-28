@@ -160,6 +160,7 @@ const IconsContainer = styled.div`
 const TopImage = styled.div`
     position: static;
     margin-top: -50px;
+    margin-left: 12px;
 
     @media ${Device.tablet} {
         position: absolute;

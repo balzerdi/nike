@@ -38,7 +38,9 @@ const Row = styled.div`
 `
 
 const Burger = styled.div`
-    margin-left: 24px;
+    margin-left: 8px;
+    padding: 12px;
+    margin-right: -12px;
     
     &> div {
         height: 2px;
