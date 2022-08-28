@@ -87,18 +87,16 @@ const RightColumn = styled(Column)`
 
 const Title = styled.h1`
     font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
+    font-size: 56px;
+    line-height: 68.26px;
     font-style: italic;
     font-weight: 700;
-    line-height: 49px;
     letter-spacing: 0px;
     text-align: left;
     margin-bottom: 24px;
 
     @media ${Device.tablet} {
         margin-bottom: 32px;
-        font-size: 56px;
-        line-height: 68.26px;
     }
 `
 
@@ -171,6 +169,7 @@ const TopImage = styled.div`
         width: 75%;
         transform: translate(-15%, -25%);
         z-index: 3;
+        margin-top: 0;
     }
 
     @media ${Device.laptop} {
@@ -198,8 +197,8 @@ const TopImage = styled.div`
     }
 
     @media ${Device.largeTabletLandscape} {
-        top: -18%;
-        right: -15%;
+        top: -19%;
+        right: -17%;
         left: auto;
         width: 70%;
         transform: none;
