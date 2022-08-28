@@ -3,7 +3,6 @@ import styled, { StyledProps } from "styled-components";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Container = styled.div`
-    max-width: 282px;
     width: 100%;
     cursor: pointer;
 `
