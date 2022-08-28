@@ -5,6 +5,9 @@ import ShoeUp from '../../public/images/shoe.png'
 import ShoeDown from '../../public/images/shoe_down.png'
 import { Device } from "../../lib/devices"
 import { keyframes } from "@emotion/react"
+import Star from "../atoms/icons/Star"
+import Delivery from "../atoms/icons/Delivery"
+import Info from "../atoms/icons/Info"
 
 const Section = styled.section`
     min-height: 100vh;
@@ -12,6 +15,7 @@ const Section = styled.section`
     position: relative;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
 `
 
 const Wrapper = styled.div`
@@ -20,24 +24,16 @@ const Wrapper = styled.div`
     padding: 0 16px 64px 16px;
     margin: auto 0 0 0;
     width: 100%;
-    margin-top: auto;
-
-    @media ${Device.mobileS} {
-        margin-top: 40vh;
-    }
-
-    @media ${Device.mobileM} {
-        margin: auto 0 0 0;
-    }
 
     @media ${Device.tablet} {
         flex-direction: row;
         padding: 0 24px 50px 24px;
-        margin: 0;
+        flex-grow: 1;
     }
 
     @media ${Device.laptop} {
         padding: 0 24px 62px 80px;
+        flex-grow: 0;
     }
 
     @media ${Device.laptopL} {
@@ -46,6 +42,10 @@ const Wrapper = styled.div`
 
     @media ${Device.largeTabletLandscape} {
         padding: 0 24px 144px 80px;
+    }
+
+    @media ${Device.largeTabletPortrait} {
+        flex-grow: 1;
     }
 `
 
@@ -56,7 +56,6 @@ const Column = styled.div`
 
     @media ${Device.tablet} {
         width: 50%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -81,6 +80,7 @@ const RightColumn = styled(Column)`
     }
 
     @media ${Device.laptop} {
+        margin: auto 0 0 0;
         padding-bottom: 0px;
     }
 `
@@ -133,6 +133,8 @@ const IconsContainer = styled.div`
 
     & > span {
         margin-right: 27px !important;
+        display: flex;
+        align-items: center;
     }
 
     & > span:nth-child(2) {
@@ -158,19 +160,17 @@ const IconsContainer = styled.div`
 `
 
 const TopImage = styled.div`
-    position: absolute;
-
-    top: -6%;
-    left: calc(50% + 40px);
-    width: 100%;
-    transform: translateX(-50%);
-    z-index: 3;
+    position: static;
+    margin-top: -50px;
 
     @media ${Device.tablet} {
+        position: absolute;
+        left: calc(50% + 40px);
         top: 25%;
         right: calc(50%);
         width: 75%;
         transform: translate(-15%, -25%);
+        z-index: 3;
     }
 
     @media ${Device.laptop} {
@@ -268,11 +268,11 @@ const Hero = () => {
                         Knit material wraps your feet for <span>lightweight</span> support so you can make quick, powerful moves like a champ.
                     </Body>
                     <IconsContainer>
-                        <Image src='/images/icons/Info.svg' width={22} height={22}  alt='' />
-                        <Image src='/images/icons/Delivery.svg' width={23} height={18}  alt='' />
+                        <span><Info /></span>
+                        <span><Delivery /></span>
                         <span>
                             <p>4,7</p>
-                            <Image src='/images/icons/Star.svg' width={22} height={22}  alt='' />
+                            <Star />
                         </span>
                     </IconsContainer>
                 </Column>
