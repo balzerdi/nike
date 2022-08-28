@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Logo from '../../../public/images/Logo.svg'
-import Basket from '../../../public/images/icons/Basket.svg'
 import { useEffect, useRef, useState } from "react";
 import { Device } from "../../../lib/devices";
-import Search from '../../../public/images/icons/Search.svg'
+import Search from "../../atoms/icons/Search";
+import Basket from "../../atoms/icons/Basket";
 
 const Wrapper = styled.div`
     position: relative;
@@ -138,7 +138,7 @@ const MobileHeader = () => {
             <Container>
                 <Image src={Logo} width={56} height={20} alt='' />
                 <Row>
-                    <Image src={Basket} width={24} height={20}  alt='' />
+                    <Basket />
                     <Burger isOpen={isOpen} onClick={() => setOpen(!isOpen)}> {/* Burger Menu */}
                         <div />
                         <div />
@@ -155,7 +155,7 @@ const MobileHeader = () => {
                     <li>Collections</li>
                     <li>Sales</li>
                     <li>
-                        <Image src={Search} width={18} height={18} alt='' />
+                        <Search />
                     </li>
                 </ul>
             </Menu>

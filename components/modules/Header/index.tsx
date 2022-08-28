@@ -3,9 +3,9 @@ import { Device } from "../../../lib/devices"
 import MobileHeader from "./MobileHeader"
 import Image from "next/image";
 import Logo from '../../../public/images/Logo.svg'
-import Search from '../../../public/images/icons/Search.svg'
-import Basket from '../../../public/images/icons/Basket.svg'
 import Link from "next/link";
+import Basket from "../../atoms/icons/Basket";
+import Search from "../../atoms/icons/Search";
 
 
 const Wrapper = styled.header`
@@ -89,12 +89,12 @@ const Header = () => {
                         <li>Collections</li>
                         <li>Sales</li>
                         <li>
-                            <Image src={Search} width={18} height={18} alt='' />
+                            <Search />
                         </li>
                     </ul>
                 </Menu>
                 <Link href="/" passHref >
-                    <a><Image src={Basket} width={24} height={20}  alt='' /></a>
+                    <a><Basket /></a>
                 </Link>
             </Container>
         </Wrapper>
